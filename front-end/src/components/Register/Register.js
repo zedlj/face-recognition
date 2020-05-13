@@ -22,11 +22,11 @@ class Register extends React.Component {
 	}
 
 	onPasswordChange = (event) => {
-		this.setState({signInPassword: event.target.value})
+		this.setState({password: event.target.value})
 			console.log('password')
 	}
 
-onSubmitSignIn = (event) => {
+onSubmitSignIn = () => {
 	fetch('http://localhost:3000/register', {
 		method: 'post',
 		headers: {'Content-Type': 'application/json'},
@@ -38,9 +38,7 @@ onSubmitSignIn = (event) => {
 	})
 	  .then(response => response.json())
 	  .then(user => {
-	  	if (user) {
-	  		//console.log('submitted')
-			//console.log(this.state)
+	  	if (user.id) {
 			this.props.loadUser(user)
 			this.props.onRouteChange('home');
 	  	}

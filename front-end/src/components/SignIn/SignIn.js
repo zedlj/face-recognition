@@ -20,7 +20,7 @@ onPasswordChange = (event) => {
 		console.log('password')
 }
 
-onSubmitSignIn = (event) => {
+onSubmitSignIn = () => {
 	fetch('http://localhost:3000/signin', {
 		method: 'post',
 		headers: {'Content-Type': 'application/json'},
@@ -32,8 +32,8 @@ onSubmitSignIn = (event) => {
 	  .then(response => response.json())
 	  .then(user => {
 	  	if (user.id) {
-	  		console.log('submitted')
-			console.log(this.state)
+	  		//console.log('submitted')
+			//console.log(this.state)
 			this.props.loadUser(user);
 			this.props.onRouteChange('home');
 	  	}
