@@ -1,6 +1,4 @@
 import React from 'react';
-// import Tilt from 'react-tilt';
-// import Face from './Face.png'
 
 const Navigation = ({onRouteChange, isSignedIn}) => {
   	  if(isSignedIn) {
@@ -18,5 +16,6 @@ const Navigation = ({onRouteChange, isSignedIn}) => {
 		 );
 	   }
 }
+
 
 export default Navigation;

@@ -13,21 +13,18 @@ class Register extends React.Component {
 
 	onNameChange = (event) => {
 		this.setState({name: event.target.value})
-		console.log('email')
 	}
 
 	onEmailChange = (event) => {
 		this.setState({email: event.target.value})
-		console.log('email')
 	}
 
 	onPasswordChange = (event) => {
 		this.setState({password: event.target.value})
-			console.log('password')
 	}
 
-onSubmitSignIn = () => {
-	fetch('http://localhost:3000/register', {
+    onSubmitSignIn = () => {
+	  fetch('http://localhost:3000/register', {
 		method: 'post',
 		headers: {'Content-Type': 'application/json'},
 		body: JSON.stringify({
@@ -97,5 +94,7 @@ onSubmitSignIn = () => {
  	  );
 	}
 }
+
+
 
 export default Register;

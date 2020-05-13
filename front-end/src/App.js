@@ -38,6 +38,7 @@ const initialState = {
         }
 }
 
+
 class App extends Component {
   constructor() {
      super();
@@ -151,5 +152,7 @@ class App extends Component {
    );
   }
 }
+
+
 
 export default App;

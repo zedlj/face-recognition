@@ -2,42 +2,40 @@ import React from 'react';
 
 
 class SignIn extends React.Component {
-constructor(props) {
-	super(props);
-	this.state = {
-		signInEmail: '',
-		signInPassword: ''
+	constructor(props) {
+		super(props);
+		this.state = {
+			signInEmail: '',
+			signInPassword: ''
+		}
 	}
-}
 
-onEmailChange = (event) => {
-	this.setState({signInEmail: event.target.value})
-	console.log('email')
-}
+	onEmailChange = (event) => {
+		this.setState({signInEmail: event.target.value})
+	}
 
-onPasswordChange = (event) => {
-	this.setState({signInPassword: event.target.value})
-		console.log('password')
-}
+	onPasswordChange = (event) => {
+		this.setState({signInPassword: event.target.value})
+	}
 
-onSubmitSignIn = () => {
-	fetch('http://localhost:3000/signin', {
-		method: 'post',
-		headers: {'Content-Type': 'application/json'},
-		body: JSON.stringify({
-			email: this.state.signInEmail,
-			password: this.state.signInPassword
+	onSubmitSignIn = () => {
+		fetch('http://localhost:3000/signin', {
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({
+				email: this.state.signInEmail,
+				password: this.state.signInPassword
+			})
 		})
-	})
-	  .then(response => response.json())
-	  .then(user => {
-	  	if (user.id) {
-	  		//console.log('submitted')
-			//console.log(this.state)
-			this.props.loadUser(user);
-			this.props.onRouteChange('home');
-	  	}
-	  })
+		  .then(response => response.json())
+		  .then(user => {
+		  	if (user.id) {
+		  		//console.log('submitted')
+				//console.log(this.state)
+				this.props.loadUser(user);
+				this.props.onRouteChange('home');
+		  	}
+		  })
 
 }
 
@@ -87,5 +85,7 @@ onSubmitSignIn = () => {
   );
  }
 }
+
+
 
 export default SignIn;

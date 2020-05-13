@@ -1,10 +1,10 @@
 const handleRegister = (req, res, db, bcrypt)=> {
 	const { email, name, password } = req.body;
-	// if these fields are empty- evaluate to true
+	// empty fileds evaluate to true 
 	if (!email || !name || !password) {
 	   return res.status(400).json('must fill all fields')
 	}
-	// if true, below doesn't run (exits at above return)
+	// if true, next block doesn't run (exits at above return)
 	const hash = bcrypt.hashSync(password);
 	  db.transaction(trx => {
 	  	trx.insert({
@@ -32,6 +32,8 @@ const handleRegister = (req, res, db, bcrypt)=> {
 }
 
 
+
+
 module.exports = {
-	handleRegister: handleRegister
+	handleRegister
 };

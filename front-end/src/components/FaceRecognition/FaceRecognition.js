@@ -1,10 +1,8 @@
 import React from 'react';
 import './FaceRecognition.css';
-// import Tilt from 'react-tilt';
-// import Face from './Face.png'
+
 
 const FaceRecognition = ({ imageUrl, box }) => {
-  // console.log('check', imageUrl)
   return (
   		<div className='center ma'>
   		  <div className='absolute mt2'>
@@ -14,5 +12,7 @@ const FaceRecognition = ({ imageUrl, box }) => {
   		</div>
   );
 }
+
+
 
 export default FaceRecognition;
